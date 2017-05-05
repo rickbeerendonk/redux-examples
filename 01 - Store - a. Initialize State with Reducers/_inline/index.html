@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Mozilla Public License Version 2.0 -->
+<!-- Copyright © 2017 Rick Beerendonk -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Rick Beerendonk">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Store - Initialize State with Reducers (inline)</title>
+  <script src="../../node_modules/redux/dist/redux.js"></script>  
+</head>
+<body>
+  <div id="content"></div>
+
+  <script>
+    function reducer(state) {
+      return state === undefined ? 'Reducer' : state; 
+    }
+
+    var store = Redux.createStore(reducer);
+
+    document.getElementById('content').innerText = store.getState();
+  </script>
+</body>
+</html>
