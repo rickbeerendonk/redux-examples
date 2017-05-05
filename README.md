@@ -11,4 +11,4 @@ To open examples you'll need to install a number of libraries:
 
 Mozilla Public License Version 2.0
 
-Copyright © 2014-2017 Rick Beerendonk
+Copyright © 2017 Rick Beerendonk
