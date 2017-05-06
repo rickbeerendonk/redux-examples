@@ -9,6 +9,13 @@ interface PayloadAction<T> extends Action {
 
 const CHANGE_NAME = 'CHANGE_NAME';
 
+function changeName(name: string): PayloadAction<string> {
+  return {
+    type: CHANGE_NAME,
+    payload: name
+  }
+}
+
 interface State {
   name: string;
 }
@@ -24,9 +31,6 @@ function reducer(state = {name: 'Reducer'}, action: Action): State {
 
 const store = createStore(reducer);
 
-store.dispatch({
-  type: CHANGE_NAME,
-  payload: 'Action'
-});
+store.dispatch(changeName('ActionCreator'));
 
 document.getElementById('content').innerText = store.getState().name;
