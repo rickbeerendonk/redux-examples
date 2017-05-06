@@ -1,7 +1,7 @@
 /*! Mozilla Public License Version 2.0 !*/
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
-import { combineReducers, createStore } from 'redux';
+import { createStore } from 'redux';
 
 const CHANGE_NAME = 'CHANGE_NAME';
 const CHANGE_VALUE = 'CHANGE_VALUE';
@@ -38,16 +38,23 @@ function value(state = 0, action) {
   }
 }
 
-const reducer = combineReducers({
-  name,
-  value
-});
+function reducer(state = {}, action) { 
+  return {
+    name: name(state.name, action),
+    value: value(state.value, action)
+  }
+}
 
 const store = createStore(reducer);
+store.subscribe(() => {
+  let item = document.createElement('li');
+  let list = document.getElementById('list');
 
-store.dispatch(changeName('combineReducers'));
+  let currentState = store.getState();
+  let text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
+  item.appendChild(text);
+  list.appendChild(item);
+});
+
+store.dispatch(changeName('Splitting Reducers'));
 store.dispatch(changeValue(2017));
-
-let currentState = store.getState();
-document.getElementById('content').innerText = 
-  `${currentState.name} - ${currentState.value}`;

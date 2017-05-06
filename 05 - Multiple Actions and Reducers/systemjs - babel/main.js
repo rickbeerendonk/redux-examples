@@ -1,43 +1,34 @@
 /*! Mozilla Public License Version 2.0 !*/
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
-import { Action, createStore } from 'redux';
-
-interface PayloadAction<T> extends Action {
-  payload: T;
-}
+import { createStore } from 'redux';
 
 const CHANGE_NAME = 'CHANGE_NAME';
 const CHANGE_VALUE = 'CHANGE_VALUE';
 
-function changeName(name: string): PayloadAction<string> {
+function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
   }
 }
 
-function changeValue(value: number): PayloadAction<number> {
+function changeValue(value) {
   return {
     type: CHANGE_VALUE,
     payload: value
   }
 }
 
-interface State {
-  name: string;
-  value: number;
-}
-
-function reducer(state = {name: '', value: 0}, action: Action): State { 
+function reducer(state = {}, action) { 
   switch (action.type) {
     case CHANGE_NAME:
       return Object.assign({}, state, {
-        name: (<PayloadAction<string>>action).payload
+        name: action.payload
       });
     case CHANGE_VALUE:
       return Object.assign({}, state, {
-        value: (<PayloadAction<number>>action).payload
+        value: action.payload
       });
     default:
       return state;
@@ -45,10 +36,15 @@ function reducer(state = {name: '', value: 0}, action: Action): State {
 }
 
 const store = createStore(reducer);
+store.subscribe(() => {
+  let item = document.createElement('li');
+  let list = document.getElementById('list');
+
+  let currentState = store.getState();
+  let text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
+  item.appendChild(text);
+  list.appendChild(item);
+});
 
 store.dispatch(changeName('Multiple Actions and Reducers'));
 store.dispatch(changeValue(2017));
-
-let currentState: State = store.getState();
-document.getElementById('content').innerText = 
-  `${currentState.name} - ${currentState.value}`;

@@ -1,7 +1,7 @@
 /*! Mozilla Public License Version 2.0 !*/
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
-import { Action, createStore, Store } from 'redux';
+import { Action, createStore, Store, Unsubscribe } from 'redux';
 
 interface PayloadAction<T> extends Action {
   payload: T;
@@ -30,7 +30,19 @@ function reducer(state = {name: 'Reducer'}, action: Action): State {
 }
 
 const store: Store<State> = createStore(reducer);
+const unsubscribe: Unsubscribe = store.subscribe(() => {
+  let item: HTMLElement = document.createElement('li');
+  let list: HTMLElement = document.getElementById('list');
 
-store.dispatch(changeName('ActionCreator'));
+  let name: string = store.getState().name;
+  let text: Text = document.createTextNode(name);
+  item.appendChild(text);
+  list.appendChild(item);
+});
 
-document.getElementById('content').innerText = store.getState().name;
+store.dispatch(changeName('Visible 1'));
+store.dispatch(changeName('Visible 2'));
+
+unsubscribe();
+
+store.dispatch(changeName('Invisible 3'));

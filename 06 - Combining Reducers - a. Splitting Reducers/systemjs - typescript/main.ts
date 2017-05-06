@@ -1,7 +1,7 @@
 /*! Mozilla Public License Version 2.0 !*/
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
-import { Action, createStore } from 'redux';
+import { Action, createStore, Store } from 'redux';
 
 interface PayloadAction<T> extends Action {
   payload: T;
@@ -54,11 +54,16 @@ function reducer(state: State = {name: undefined, value: undefined}, action: Act
   }
 }
 
-const store = createStore(reducer);
+const store: Store<State> = createStore(reducer);
+store.subscribe(() => {
+  let item: HTMLElement = document.createElement('li');
+  let list: HTMLElement = document.getElementById('list');
+
+  let currentState: State = store.getState();
+  let text: Text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
+  item.appendChild(text);
+  list.appendChild(item);
+});
 
 store.dispatch(changeName('Splitting Reducers'));
 store.dispatch(changeValue(2017));
-
-let currentState: State = store.getState();
-document.getElementById('content').innerText = 
-  `${currentState.name} - ${currentState.value}`;
