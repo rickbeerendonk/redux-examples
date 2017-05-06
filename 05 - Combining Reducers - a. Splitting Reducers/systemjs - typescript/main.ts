@@ -29,24 +29,34 @@ interface State {
   value: number;
 }
 
-function reducer(state = {name: '', value: 0}, action: Action): State { 
+function name(state = '', action: Action): string {
   switch (action.type) {
     case CHANGE_NAME:
-      return Object.assign({}, state, {
-        name: (<PayloadAction<string>>action).payload
-      });
-    case CHANGE_VALUE:
-      return Object.assign({}, state, {
-        value: (<PayloadAction<number>>action).payload
-      });
+      return (<PayloadAction<string>>action).payload;
     default:
       return state;
   }
 }
 
+function value(state = 0, action: Action): number {
+  switch (action.type) {
+    case CHANGE_VALUE:
+      return (<PayloadAction<number>>action).payload;
+    default:
+      return state;
+  }
+}
+
+function reducer(state: State = {name: undefined, value: undefined}, action: Action): State { 
+  return {
+    name: name(state.name, action),
+    value: value(state.value, action)
+  }
+}
+
 const store = createStore(reducer);
 
-store.dispatch(changeName('Multiple Actions and Reducers'));
+store.dispatch(changeName('Splitting Reducers'));
 store.dispatch(changeValue(2017));
 
 let currentState: State = store.getState();
