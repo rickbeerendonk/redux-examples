@@ -56,12 +56,13 @@ function reducer(state: State = {name: undefined, value: undefined}, action: Act
 
 const store: Store<State> = createStore(reducer);
 store.subscribe(() => {
-  let item: HTMLElement = document.createElement('li');
-  let list: HTMLElement = document.getElementById('list');
-
   let currentState: State = store.getState();
   let text: Text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
+
+  let item: HTMLElement = document.createElement('li');
   item.appendChild(text);
+
+  let list: HTMLElement = document.getElementById('list');
   list.appendChild(item);
 });
 

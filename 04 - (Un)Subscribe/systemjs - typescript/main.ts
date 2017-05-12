@@ -31,12 +31,13 @@ function reducer(state = {name: 'Reducer'}, action: Action): State {
 
 const store: Store<State> = createStore(reducer);
 const unsubscribe: Unsubscribe = store.subscribe(() => {
-  let item: HTMLElement = document.createElement('li');
-  let list: HTMLElement = document.getElementById('list');
-
   let name: string = store.getState().name;
   let text: Text = document.createTextNode(name);
+
+  let item: HTMLElement = document.createElement('li');
   item.appendChild(text);
+
+  let list: HTMLElement = document.getElementById('list');
   list.appendChild(item);
 });
 

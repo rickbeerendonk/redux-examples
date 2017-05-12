@@ -45,12 +45,13 @@ const reducer = combineReducers({
 
 const store = createStore(reducer);
 store.subscribe(() => {
-  let item = document.createElement('li');
-  let list = document.getElementById('list');
-
   let currentState = store.getState();
   let text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
+
+  let item = document.createElement('li');
   item.appendChild(text);
+
+  let list = document.getElementById('list');
   list.appendChild(item);
 });
 
