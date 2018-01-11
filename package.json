@@ -18,20 +18,20 @@
     "openserver": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-plugin-react": "^6.10.3",
-    "redux-devtools": "3.4.0",
-    "rimraf": "^2.6.1"
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
+    "redux-devtools": "^3.4.1",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "plugin-typescript": "7.0.6",
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-redux": "5.0.4",
-    "redux": "3.6.0",
-    "systemjs": "0.20.12",
-    "systemjs-plugin-babel": "0.0.21",
-    "typescript": "2.3.2"
+    "plugin-typescript": "^8.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "systemjs": "0.20.19",
+    "systemjs-plugin-babel": "^0.0.25",
+    "typescript": "^2.6.2"
   }
 }
