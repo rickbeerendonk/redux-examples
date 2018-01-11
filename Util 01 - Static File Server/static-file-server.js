@@ -43,7 +43,23 @@ http.createServer(function(request, response) {
         return;
       }
 
-      response.writeHead(200);
+      let headers = { "Content-Type": "text/plain" };
+      switch (path.extname(filename)) {
+        case ".css":
+          headers["Content-Type"] = "text/css";
+          break;
+        case ".htm":
+        case ".html":
+          headers["Content-Type"] = "text/html";
+          break;
+      }
+
+
+      if (path.extname(filename) === ".css") {
+        headers["Content-Type"] = "text/css";
+      }
+
+      response.writeHead(200, headers);
       response.write(file, "binary");
       response.end();
     });
