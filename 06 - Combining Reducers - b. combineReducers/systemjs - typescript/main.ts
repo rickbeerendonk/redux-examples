@@ -2,6 +2,7 @@
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
 import { Action, combineReducers, createStore, Store } from 'redux';
+import { addToList } from './helpers';
 
 interface PayloadAction<T> extends Action {
   payload: T;
@@ -54,14 +55,8 @@ const reducer = combineReducers<State>({
 
 const store: Store<State> = createStore(reducer);
 store.subscribe(() => {
-  let currentState: State = store.getState();
-  let text: Text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
-
-  let item: HTMLElement = document.createElement('li');
-  item.appendChild(text);
-
-  let list: HTMLElement = document.getElementById('list');
-  list.appendChild(item);
+  const currentState: State = store.getState();
+  addToList(`${currentState.name} - ${currentState.value}`);
 });
 
 store.dispatch(changeName('combineReducers'));

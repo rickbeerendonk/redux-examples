@@ -2,6 +2,7 @@
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
 import { createStore } from 'redux';
+import { addToList } from './helpers';
 
 const CHANGE_NAME = 'CHANGE_NAME';
 
@@ -23,14 +24,8 @@ function reducer(state = {name: 'Reducer'}, action) {
 
 const store = createStore(reducer);
 const unsubscribe = store.subscribe(() => {
-  let name = store.getState().name;
-  let text = document.createTextNode(name);
-
-  let item = document.createElement('li');
-  item.appendChild(text);
-
-  let list = document.getElementById('list');
-  list.appendChild(item);
+  const name = store.getState().name;
+  addToList(name);
 });
 
 store.dispatch(changeName('Visible 1'));

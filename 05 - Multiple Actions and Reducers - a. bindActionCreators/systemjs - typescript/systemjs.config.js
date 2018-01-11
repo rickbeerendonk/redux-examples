@@ -29,5 +29,10 @@ SystemJS.config({
     'typescript': 'npm:typescript/lib/typescript.js',
     'redux': 'npm:redux/dist/redux.js'
   },
+  packages: {
+    ".": {
+      "defaultExtension": "ts"
+    }
+  },
   transpiler: 'ts'
 });

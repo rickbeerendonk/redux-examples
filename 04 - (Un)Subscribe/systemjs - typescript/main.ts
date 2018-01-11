@@ -2,6 +2,7 @@
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
 import { Action, createStore, Store, Unsubscribe } from 'redux';
+import { addToList } from './helpers';
 
 interface PayloadAction<T> extends Action {
   payload: T;
@@ -31,14 +32,8 @@ function reducer(state = {name: 'Reducer'}, action: Action): State {
 
 const store: Store<State> = createStore(reducer);
 const unsubscribe: Unsubscribe = store.subscribe(() => {
-  let name: string = store.getState().name;
-  let text: Text = document.createTextNode(name);
-
-  let item: HTMLElement = document.createElement('li');
-  item.appendChild(text);
-
-  let list: HTMLElement = document.getElementById('list');
-  list.appendChild(item);
+  const name: string = store.getState().name;
+  addToList(name);
 });
 
 store.dispatch(changeName('Visible 1'));

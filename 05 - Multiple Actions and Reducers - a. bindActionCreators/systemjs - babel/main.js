@@ -2,6 +2,7 @@
 /*! Copyright © 2017 Rick Beerendonk   !*/
 
 import { bindActionCreators, createStore } from 'redux';
+import { addToList } from './helpers';
 
 const CHANGE_NAME = 'CHANGE_NAME';
 const CHANGE_VALUE = 'CHANGE_VALUE';
@@ -37,14 +38,8 @@ function reducer(state = {}, action) {
 
 const store = createStore(reducer);
 store.subscribe(() => {
-  let currentState = store.getState();
-  let text = document.createTextNode(`${currentState.name} - ${currentState.value}`);
-
-  let item = document.createElement('li');
-  item.appendChild(text);
-
-  let list = document.getElementById('list');
-  list.appendChild(item);
+  const currentState = store.getState();
+  addToList(`${currentState.name} - ${currentState.value}`);
 });
 
 const boundActionCreators = bindActionCreators({changeName, changeValue}, store.dispatch);
