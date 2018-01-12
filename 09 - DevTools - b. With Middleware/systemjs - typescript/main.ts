@@ -84,5 +84,5 @@ store.subscribe(() => {
   addToList(`${currentState.name} - ${currentState.value}`);
 });
 
-store.dispatch(changeName('combineReducers'));
-store.dispatch(changeValue(2017));
+store.dispatch(changeName('DevTools (with Middleware)'));
+store.dispatch(changeValue(2018));
