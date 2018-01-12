@@ -73,7 +73,7 @@ const reducer = combineReducers<State>({
   value
 })
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers: Function = window["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] || compose;
 const store: Store<State> = createStore(
   reducer, 
   composeEnhancers(
