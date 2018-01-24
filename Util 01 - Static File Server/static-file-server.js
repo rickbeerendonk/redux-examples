@@ -52,11 +52,9 @@ http.createServer(function(request, response) {
         case ".html":
           headers["Content-Type"] = "text/html";
           break;
-      }
-
-
-      if (path.extname(filename) === ".css") {
-        headers["Content-Type"] = "text/css";
+        case ".js":
+          headers["Content-Type"] = "application/javascript";
+          break;
       }
 
       response.writeHead(200, headers);
