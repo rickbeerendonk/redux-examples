@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-const EditBox = ({onChange, name}) => (
+const EditBox = ({ onChange, name }) => (
   <input onChange={e => onChange(e.target.value)} value={name} />
 );
 
