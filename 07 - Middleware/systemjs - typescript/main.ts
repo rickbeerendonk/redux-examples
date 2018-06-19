@@ -8,7 +8,7 @@ import {
 
 import { addToList } from './helpers';
 
-const logger: Middleware = <S>(store: MiddlewareAPI<S>) => (next: Dispatch<Action>) => (action: any) => {
+const logger: Middleware = <S extends Dispatch<Action>>(store: MiddlewareAPI<S>) => (next: Dispatch<Action>) => (action: any) => {
   // Before state change
   addToList(`[Logger] Dispatching ${JSON.stringify(action)}`, 'logger');
 
