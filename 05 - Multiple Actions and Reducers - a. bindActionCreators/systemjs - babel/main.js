@@ -11,14 +11,14 @@ function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function changeValue(value) {
   return {
     type: CHANGE_VALUE,
     payload: value
-  }
+  };
 }
 
 function reducer(state = {}, action) { 

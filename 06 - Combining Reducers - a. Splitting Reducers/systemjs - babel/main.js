@@ -11,14 +11,14 @@ function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function changeValue(value) {
   return {
     type: CHANGE_VALUE,
     payload: value
-  }
+  };
 }
 
 function name(state = '', action) {
@@ -43,7 +43,7 @@ function reducer(state = {}, action) {
   return {
     name: name(state.name, action),
     value: value(state.value, action)
-  }
+  };
 }
 
 const store = createStore(reducer);

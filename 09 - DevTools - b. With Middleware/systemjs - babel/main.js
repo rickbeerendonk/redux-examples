@@ -17,8 +17,8 @@ const logger = store => next => action => {
   addToList(`[Logger] Result = ${JSON.stringify(result)}`, 'logger');
   addToList(`[Logger] Next state = ${JSON.stringify(store.getState())}`, 'logger');
 
-  return result
-}
+  return result;
+};
 
 const CHANGE_NAME = 'CHANGE_NAME';
 const CHANGE_VALUE = 'CHANGE_VALUE';
@@ -27,14 +27,14 @@ function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function changeValue(value) {
   return {
     type: CHANGE_VALUE,
     payload: value
-  }
+  };
 }
 
 function name(state = '', action) {

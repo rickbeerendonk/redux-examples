@@ -10,7 +10,7 @@ function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function reducer(state = {name: 'Reducer'}, action) { 

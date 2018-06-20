@@ -15,14 +15,14 @@ function changeName(name: string): PayloadAction<string> {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function changeValue(value: number): PayloadAction<number> {
   return {
     type: CHANGE_VALUE,
     payload: value
-  }
+  };
 }
 
 interface State {

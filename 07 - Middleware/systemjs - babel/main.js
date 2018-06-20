@@ -6,6 +6,7 @@ import { addToList } from './helpers';
 
 const logger = store => next => action => {
   // Before state change
+  addToList(`[Logger] Previous state = ${JSON.stringify(store.getState())}`, 'logger');
   addToList(`[Logger] Dispatching ${JSON.stringify(action)}`, 'logger');
 
   // Change state by calling next piece of code (or not).
@@ -17,8 +18,8 @@ const logger = store => next => action => {
   addToList(`[Logger] Result = ${JSON.stringify(result)}`, 'logger');
   addToList(`[Logger] Next state = ${JSON.stringify(store.getState())}`, 'logger');
 
-  return result
-}
+  return result;
+};
 
 const CHANGE_NAME = 'CHANGE_NAME';
 const CHANGE_VALUE = 'CHANGE_VALUE';
@@ -27,14 +28,14 @@ function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function changeValue(value) {
   return {
     type: CHANGE_VALUE,
     payload: value
-  }
+  };
 }
 
 function name(state = '', action) {

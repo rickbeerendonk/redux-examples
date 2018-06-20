@@ -13,7 +13,7 @@ function changeName(name: string): PayloadAction<string> {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 interface State {

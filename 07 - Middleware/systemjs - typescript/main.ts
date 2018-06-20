@@ -21,8 +21,8 @@ const logger: Middleware = <S extends Dispatch<Action>>(store: MiddlewareAPI<S>)
   addToList(`[Logger] Result = ${JSON.stringify(result)}`, 'logger');
   addToList(`[Logger] Next state = ${JSON.stringify(store.getState())}`, 'logger');
 
-  return result
-}
+  return result;
+};
 
 interface PayloadAction<T> extends Action {
   payload: T;
@@ -35,14 +35,14 @@ function changeName(name: string): PayloadAction<string> {
   return {
     type: CHANGE_NAME,
     payload: name
-  }
+  };
 }
 
 function changeValue(value: number): PayloadAction<number> {
   return {
     type: CHANGE_VALUE,
     payload: value
-  }
+  };
 }
 
 interface State {
@@ -71,7 +71,7 @@ function value(state = 0, action: Action): number {
 const reducer = combineReducers<State>({
   name,
   value
-})
+});
 
 const store: Store<State> = createStore(reducer, applyMiddleware(logger));
 store.subscribe(() => {
