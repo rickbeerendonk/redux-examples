@@ -21,13 +21,13 @@ const GreetingEditor = ({ name, changeName }) => (
 
 const mapStateToProps = state => ({
   name: state.name
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   changeName: bindActionCreators(changeName, dispatch)
-})
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(GreetingEditor)
+)(GreetingEditor);

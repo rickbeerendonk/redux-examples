@@ -1,7 +1,7 @@
 /*! Mozilla Public License Version 2.0 !*/
 /*! Copyright © 2018 Rick Beerendonk   !*/
 
-import { CHANGE_NAME } from '../constants/ActionTypes'
+import { CHANGE_NAME } from '../constants/ActionTypes';
 
 const initialState = 'React';
 
