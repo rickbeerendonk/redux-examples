@@ -4,20 +4,14 @@
 import { createStore } from 'redux';
 import { addToList } from './helpers';
 
+// Name
+
 const CHANGE_NAME = 'CHANGE_NAME';
-const CHANGE_VALUE = 'CHANGE_VALUE';
 
 function changeName(name) {
   return {
     type: CHANGE_NAME,
     payload: name
-  };
-}
-
-function changeValue(value) {
-  return {
-    type: CHANGE_VALUE,
-    payload: value
   };
 }
 
@@ -30,6 +24,17 @@ function name(state = '', action) {
   }
 }
 
+// Value
+
+const CHANGE_VALUE = 'CHANGE_VALUE';
+
+function changeValue(value) {
+  return {
+    type: CHANGE_VALUE,
+    payload: value
+  };
+}
+
 function value(state = 0, action) {
   switch (action.type) {
     case CHANGE_VALUE:
@@ -38,6 +43,8 @@ function value(state = 0, action) {
       return state;
   }
 }
+
+// Combine
 
 function reducer(state = {}, action) { 
   return {
