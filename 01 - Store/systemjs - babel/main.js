@@ -4,7 +4,7 @@
 import { createStore } from 'redux';
 
 function reducer(state) { 
-  return state; 
+  return state;
 }
 
 const store = createStore(reducer);
