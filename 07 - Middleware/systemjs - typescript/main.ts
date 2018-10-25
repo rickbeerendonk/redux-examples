@@ -79,9 +79,10 @@ const reducer = combineReducers<State>({
 });
 
 const store: Store<State> = createStore(reducer, applyMiddleware(logger));
+addToList(JSON.stringify(store.getState()));
+
 store.subscribe(() => {
-  let currentState: State = store.getState();
-  addToList(`${currentState.name} - ${currentState.value}`);
+  addToList(JSON.stringify(store.getState()));
 });
 
 store.dispatch(changeName('Middleware'));

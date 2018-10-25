@@ -54,9 +54,10 @@ const reducer = combineReducers<State>({
 });
 
 const store: Store<State> = createStore(reducer);
+addToList(JSON.stringify(store.getState()));
+
 store.subscribe(() => {
-  const currentState: State = store.getState();
-  addToList(`${currentState.name} - ${currentState.value}`);
+  addToList(JSON.stringify(store.getState()));
 });
 
 store.dispatch(changeName('combineReducers'));

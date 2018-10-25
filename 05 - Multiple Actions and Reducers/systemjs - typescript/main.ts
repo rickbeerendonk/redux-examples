@@ -46,10 +46,12 @@ function reducer(state = {name: '', value: 0}, action: Action): State {
 }
 
 const store: Store<State> = createStore(reducer);
+addToList(JSON.stringify(store.getState()));
+
 store.subscribe(() => {
-  const currentState: State = store.getState();
-  addToList(`${currentState.name} - ${currentState.value}`);
+  addToList(JSON.stringify(store.getState()));
 });
+
 
 store.dispatch(changeName('Multiple Actions and Reducers'));
 store.dispatch(changeValue(2017));

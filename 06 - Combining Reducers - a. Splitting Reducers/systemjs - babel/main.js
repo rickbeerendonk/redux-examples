@@ -56,7 +56,7 @@ function reducer(state = {}, action) {
 const store = createStore(reducer);
 store.subscribe(() => {
   const currentState = store.getState();
-  addToList(`${currentState.name} - ${currentState.value}`);
+  addToList(JSON.stringify(currentState));
 });
 
 store.dispatch(changeName('Splitting Reducers'));

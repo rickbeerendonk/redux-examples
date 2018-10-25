@@ -48,9 +48,10 @@ const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+addToList(JSON.stringify(store.getState()));
+
 store.subscribe(() => {
-  const currentState = store.getState();
-  addToList(`${currentState.name} - ${currentState.value}`);
+  addToList(JSON.stringify(store.getState()));
 });
 
 store.dispatch(changeName('DevTools (without Middleware)'));
