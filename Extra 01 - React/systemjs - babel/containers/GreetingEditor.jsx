@@ -12,12 +12,14 @@ import { changeName } from '../actions/index';
 import EditBox from '../components/EditBox';
 import Greeting from '../components/Greeting';
 
-const GreetingEditor = ({ name, changeName }) => (
-  <React.Fragment>
-    <EditBox onChange={changeName} name={name} />
-    <Greeting name={name} />
-  </React.Fragment>
-);
+function GreetingEditor({ name, changeName }) {
+  return (
+    <React.Fragment>
+      <EditBox onChange={changeName} name={name} />
+      <Greeting name={name} />
+    </React.Fragment>
+  );
+}
 
 const mapStateToProps = state => ({
   name: state.name
