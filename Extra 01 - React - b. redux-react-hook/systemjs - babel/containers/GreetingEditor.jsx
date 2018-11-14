@@ -11,7 +11,7 @@ import { changeName } from '../actions/index';
 import EditBox from '../components/EditBox';
 import Greeting from '../components/Greeting';
 
-// Declare outside of the function to prevent infinite recurses.
+// Declare outside of the function to prevent infinite recursion.
 const mapState = state => ({
   name: state.name
 });
