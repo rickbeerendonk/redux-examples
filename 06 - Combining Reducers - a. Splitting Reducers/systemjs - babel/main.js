@@ -54,6 +54,8 @@ function reducer(state = {}, action) {
 }
 
 const store = createStore(reducer);
+addToList(JSON.stringify(store.getState()));
+
 store.subscribe(() => {
   const currentState = store.getState();
   addToList(JSON.stringify(currentState));
