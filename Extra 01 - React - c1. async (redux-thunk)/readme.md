@@ -1,3 +1,3 @@
-# react-redux
+# redux-thunk
 
-https://react-redux.js.org/
+https://github.com/reduxjs/redux-thunk
