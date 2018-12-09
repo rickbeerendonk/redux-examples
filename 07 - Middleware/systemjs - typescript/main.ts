@@ -68,6 +68,8 @@ function value(state = 0, action: Action): number {
   }
 }
 
+// Combine
+
 interface State {
   name: string;
   value: number;

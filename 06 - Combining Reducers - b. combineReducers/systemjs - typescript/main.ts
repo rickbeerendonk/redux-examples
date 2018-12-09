@@ -8,26 +8,15 @@ interface PayloadAction<T> extends Action {
   payload: T;
 }
 
+// Name
+
 const CHANGE_NAME = 'CHANGE_NAME';
-const CHANGE_VALUE = 'CHANGE_VALUE';
 
 function changeName(name: string): PayloadAction<string> {
   return {
     type: CHANGE_NAME,
     payload: name
   };
-}
-
-function changeValue(value: number): PayloadAction<number> {
-  return {
-    type: CHANGE_VALUE,
-    payload: value
-  };
-}
-
-interface State {
-  name: string;
-  value: number;
 }
 
 function name(state = '', action: Action): string {
@@ -39,6 +28,17 @@ function name(state = '', action: Action): string {
   }
 }
 
+// Value
+
+const CHANGE_VALUE = 'CHANGE_VALUE';
+
+function changeValue(value: number): PayloadAction<number> {
+  return {
+    type: CHANGE_VALUE,
+    payload: value
+  };
+}
+
 function value(state = 0, action: Action): number {
   switch (action.type) {
     case CHANGE_VALUE:
@@ -46,6 +46,13 @@ function value(state = 0, action: Action): number {
     default:
       return state;
   }
+}
+
+// Combine
+
+interface State {
+  name: string;
+  value: number;
 }
 
 const reducer = combineReducers<State>({
