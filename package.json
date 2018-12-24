@@ -19,11 +19,11 @@
     "openserver_old": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080"
   },
   "devDependencies": {
-    "@types/react": "^16.7.17",
+    "@types/react": "^16.7.18",
     "@types/react-redux": "^6.0.11",
-    "eslint": "^5.10.0",
+    "eslint": "^5.11.0",
     "eslint-plugin-react": "^7.11.1",
-    "redux-devtools": "^3.4.2",
+    "redux-devtools": "^3.5.0",
     "rimraf": "^2.6.2"
   },
   "dependencies": {
