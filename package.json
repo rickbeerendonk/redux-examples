@@ -21,7 +21,7 @@
   "devDependencies": {
     "@types/react": "^16.7.18",
     "@types/react-redux": "^6.0.11",
-    "eslint": "^5.11.0",
+    "eslint": "^5.11.1",
     "eslint-plugin-react": "^7.11.1",
     "redux-devtools": "^3.5.0",
     "rimraf": "^2.6.2"
@@ -34,7 +34,7 @@
     "react-dom": "next",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
-    "redux-react-hook": "^3.0.0",
+    "redux-react-hook": "^3.0.1",
     "redux-thunk": "^2.3.0",
     "systemjs": "0.21.5",
     "systemjs-plugin-babel": "^0.0.25",
