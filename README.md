@@ -26,4 +26,4 @@ Install dependencies first:
 
 Mozilla Public License Version 2.0
 
-Copyright © 2017-2018 Rick Beerendonk
+Copyright © 2017-2019 Rick Beerendonk
