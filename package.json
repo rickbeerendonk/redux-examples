@@ -22,9 +22,9 @@
     "@types/react": "^16.7.18",
     "@types/react-redux": "^6.0.11",
     "eslint": "^5.11.1",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react": "^7.12.3",
     "redux-devtools": "^3.5.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "http-server": "^0.11.1",
