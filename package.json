@@ -19,10 +19,10 @@
     "openserver_old": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080"
   },
   "devDependencies": {
-    "@types/react": "^16.7.18",
-    "@types/react-redux": "^6.0.11",
-    "eslint": "^5.11.1",
-    "eslint-plugin-react": "^7.12.3",
+    "@types/react": "^16.7.20",
+    "@types/react-redux": "^6.0.13",
+    "eslint": "^5.12.0",
+    "eslint-plugin-react": "^7.12.4",
     "redux-devtools": "^3.5.0",
     "rimraf": "^2.6.3"
   },
@@ -36,8 +36,8 @@
     "redux": "^4.0.1",
     "redux-react-hook": "^3.0.1",
     "redux-thunk": "^2.3.0",
-    "systemjs": "0.21.5",
+    "systemjs": "0.21.6",
     "systemjs-plugin-babel": "^0.0.25",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.4"
   }
 }
