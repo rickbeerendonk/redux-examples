@@ -24,13 +24,9 @@ function changeValue(value) {
 function reducer(state = {}, action) { 
   switch (action.type) {
     case CHANGE_NAME:
-      return Object.assign({}, state, {
-        name: action.payload
-      });
+      return {...state, name: action.payload};
     case CHANGE_VALUE:
-      return Object.assign({}, state, {
-        value: action.payload
-      });
+      return {...state, value: action.payload};
     default:
       return state;
   }

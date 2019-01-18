@@ -23,7 +23,7 @@ interface State {
 function reducer(state = {name: 'Reducer'}, action: Action): State { 
   switch (action.type) {
     case CHANGE_NAME:
-      return Object.assign({}, state, {name: (<PayloadAction<string>>action).payload});
+      return {...state, name: (<PayloadAction<string>>action).payload};
     default:
       return state;
   }

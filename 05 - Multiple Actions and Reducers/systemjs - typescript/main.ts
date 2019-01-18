@@ -33,13 +33,9 @@ interface State {
 function reducer(state = {name: '', value: 0}, action: Action): State { 
   switch (action.type) {
     case CHANGE_NAME:
-      return Object.assign({}, state, {
-        name: (<PayloadAction<string>>action).payload
-      });
+      return {...state, name: (<PayloadAction<string>>action).payload};
     case CHANGE_VALUE:
-      return Object.assign({}, state, {
-        value: (<PayloadAction<number>>action).payload
-      });
+      return {...state, value: (<PayloadAction<number>>action).payload};
     default:
       return state;
   }

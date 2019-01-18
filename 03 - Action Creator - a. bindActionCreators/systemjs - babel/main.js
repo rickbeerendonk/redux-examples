@@ -15,7 +15,7 @@ function changeName(name) {
 function reducer(state = {name: 'Reducer'}, action) { 
   switch (action.type) {
     case CHANGE_NAME:
-      return Object.assign({}, state, {name: action.payload});
+      return {...state, name: action.payload};
     default:
       return state;
   }
