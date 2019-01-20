@@ -12,6 +12,12 @@
     "url": "https://github.com/rickbeerendonk/redux-examples/issues"
   },
   "homepage": "https://github.com/rickbeerendonk/redux-examples#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate",
+      "pre-push": "npm run validate"
+    }
+  },
   "scripts": {
     "clean": "rimraf node_modules",
     "eslint": "eslint . --ext .js,.jsx --cache",
@@ -20,13 +26,15 @@
     "openserver": "node \"./Util 02 - HTTP and REST servers/server.js\" 8080",
     "openserver_old": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080",
     "prettier": "prettier --list-different '**/*.{json,js,jsx,html,ts,tsx}'",
-    "prettier-fix": "prettier --write '**/*.{json,js,jsx,html,ts,tsx}'"
+    "prettier-fix": "prettier --write '**/*.{json,js,jsx,html,ts,tsx}'",
+    "validate": "npm run eslint && npm run prettier"
   },
   "devDependencies": {
     "@types/react": "^16.7.20",
     "@types/react-redux": "^6.0.13",
     "eslint": "^5.12.1",
     "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
     "redux-devtools": "^3.5.0",
     "prettier": "^1.16.0",
     "rimraf": "^2.6.3"
