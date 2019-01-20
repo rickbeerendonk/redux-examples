@@ -1,3 +1,5 @@
+/* global Promise */
+
 export function slowfetch(ms, ...args) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
