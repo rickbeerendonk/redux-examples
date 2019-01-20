@@ -20,10 +20,10 @@ interface State {
   name: string;
 }
 
-function reducer(state = {name: 'Reducer'}, action: Action): State { 
+function reducer(state = { name: 'Reducer' }, action: Action): State {
   switch (action.type) {
     case CHANGE_NAME:
-      return {...state, name: (<PayloadAction<string>>action).payload};
+      return { ...state, name: (<PayloadAction<string>>action).payload };
     default:
       return state;
   }

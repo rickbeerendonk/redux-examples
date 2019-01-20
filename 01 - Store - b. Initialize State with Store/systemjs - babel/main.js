@@ -3,8 +3,8 @@
 
 import { createStore } from 'redux';
 
-function reducer(state = 'Reducer') { 
-  return state; 
+function reducer(state = 'Reducer') {
+  return state;
 }
 
 const store = createStore(reducer, 'CreateStore');

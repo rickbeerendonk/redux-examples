@@ -8,61 +8,63 @@
 /* global require, process */
 /* eslint-disable no-console */
 
-let fs = require("fs");
-let http = require("http");
-let path = require("path");
-let url = require("url");
-let childProcess = require("child_process");
+let fs = require('fs');
+let http = require('http');
+let path = require('path');
+let url = require('url');
+let childProcess = require('child_process');
 
 let port = process.argv[2] || 8080;
 let filePath = process.argv[3];
 let basePath = process.cwd();
 
-http.createServer(function(request, response) {
-  let uri = url.parse(request.url).pathname;
-  let decodeUri = decodeURIComponent(uri);
-  let filename = path.join(basePath, decodeUri);
-  
-  fs.exists(filename, function(exists) {
-    if (!exists) {
-      response.writeHead(404, { "Content-Type": "text/plain" });
-      response.write("404 Not Found\n");
-      response.end();
-      return;
-    }
+http
+  .createServer(function(request, response) {
+    let uri = url.parse(request.url).pathname;
+    let decodeUri = decodeURIComponent(uri);
+    let filename = path.join(basePath, decodeUri);
 
-    if (fs.statSync(filename).isDirectory()) {
-      filename = path.join(filename, 'index.html');
-    }
-
-    fs.readFile(filename, "binary", function(err, file) {
-      if (err) {        
-        response.writeHead(500, { "Content-Type": "text/plain" });
-        response.write(err + "\n");
+    fs.exists(filename, function(exists) {
+      if (!exists) {
+        response.writeHead(404, { 'Content-Type': 'text/plain' });
+        response.write('404 Not Found\n');
         response.end();
         return;
       }
 
-      let headers = { "Content-Type": "text/plain" };
-      switch (path.extname(filename)) {
-        case ".css":
-          headers["Content-Type"] = "text/css";
-          break;
-        case ".htm":
-        case ".html":
-          headers["Content-Type"] = "text/html";
-          break;
-        case ".js":
-          headers["Content-Type"] = "application/javascript";
-          break;
+      if (fs.statSync(filename).isDirectory()) {
+        filename = path.join(filename, 'index.html');
       }
 
-      response.writeHead(200, headers);
-      response.write(file, "binary");
-      response.end();
+      fs.readFile(filename, 'binary', function(err, file) {
+        if (err) {
+          response.writeHead(500, { 'Content-Type': 'text/plain' });
+          response.write(err + '\n');
+          response.end();
+          return;
+        }
+
+        let headers = { 'Content-Type': 'text/plain' };
+        switch (path.extname(filename)) {
+          case '.css':
+            headers['Content-Type'] = 'text/css';
+            break;
+          case '.htm':
+          case '.html':
+            headers['Content-Type'] = 'text/html';
+            break;
+          case '.js':
+            headers['Content-Type'] = 'application/javascript';
+            break;
+        }
+
+        response.writeHead(200, headers);
+        response.write(file, 'binary');
+        response.end();
+      });
     });
-  });
-}).listen(parseInt(port, 10));
+  })
+  .listen(parseInt(port, 10));
 
 let serverUri = `http://localhost:${port}/`;
 
@@ -80,8 +82,12 @@ if (filePath.startsWith(basePath)) {
   let extraPath = filePath.substring(basePath.length);
   let extraUri = `${serverUri}${extraPath}`;
 
-  let command = process.platform === "win32" ? `start "" "${extraUri}"` :
-                /* process.platform === "darwin" */ `open "${extraUri}"`;
-  
-  childProcess.exec(command, () => { process.exit; });
+  let command =
+    process.platform === 'win32'
+      ? `start "" "${extraUri}"`
+      : /* process.platform === "darwin" */ `open "${extraUri}"`;
+
+  childProcess.exec(command, () => {
+    process.exit;
+  });
 }

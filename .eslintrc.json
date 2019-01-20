@@ -10,13 +10,8 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "react"
-  ],
-  "extends": [
-    "eslint:recommended", 
-    "plugin:react/recommended"
-  ],
+  "plugins": ["react"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "react/prop-types": 0,
     "semi": [2, "always"]

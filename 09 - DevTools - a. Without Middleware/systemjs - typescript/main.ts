@@ -1,10 +1,7 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2018 Rick Beerendonk          !*/
 
-import { 
-  Action, Dispatch, Store,
-  combineReducers, createStore
-} from 'redux';
+import { Action, Dispatch, Store, combineReducers, createStore } from 'redux';
 
 import { addToList } from './helpers';
 
@@ -55,12 +52,13 @@ function value(state = 0, action: Action): number {
 const reducer = combineReducers<State>({
   name,
   value
-})
+});
 
 const store: Store<State> = createStore(
   reducer,
-  window['__REDUX_DEVTOOLS_EXTENSION__'] && window['__REDUX_DEVTOOLS_EXTENSION__']() 
-  );
+  window['__REDUX_DEVTOOLS_EXTENSION__'] &&
+    window['__REDUX_DEVTOOLS_EXTENSION__']()
+);
 addToList(JSON.stringify(store.getState()));
 
 store.subscribe(() => {

@@ -20,11 +20,12 @@ SystemJS.config({
   map: {
     'plugin-babel': 'npm:systemjs-plugin-babel/plugin-babel.js',
     'slow-fetch': 'utils:slow-fetch.js',
-    'systemjs-babel-build': 'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
-    'react': 'npm:react/umd/react.development.js',
+    'systemjs-babel-build':
+      'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
+    react: 'npm:react/umd/react.development.js',
     'react-dom': 'npm:react-dom/umd/react-dom.development.js',
     'react-redux': 'npm:react-redux',
-    'redux': 'npm:redux/dist/redux.js',
+    redux: 'npm:redux/dist/redux.js',
     'redux-thunk': 'npm:redux-thunk/dist/redux-thunk.js'
   },
   packages: {
@@ -40,10 +41,10 @@ SystemJS.config({
     './reducers': {
       defaultExtension: 'js'
     },
-    'react-redux': { 
+    'react-redux': {
       format: 'cjs',
       main: 'dist/react-redux.js'
-    },
+    }
   },
   transpiler: 'plugin-babel'
 });

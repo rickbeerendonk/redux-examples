@@ -30,12 +30,12 @@ interface State {
   value: number;
 }
 
-function reducer(state = {name: '', value: 0}, action: Action): State { 
+function reducer(state = { name: '', value: 0 }, action: Action): State {
   switch (action.type) {
     case CHANGE_NAME:
-      return {...state, name: (<PayloadAction<string>>action).payload};
+      return { ...state, name: (<PayloadAction<string>>action).payload };
     case CHANGE_VALUE:
-      return {...state, value: (<PayloadAction<number>>action).payload};
+      return { ...state, value: (<PayloadAction<number>>action).payload };
     default:
       return state;
   }
@@ -47,7 +47,6 @@ addToList(JSON.stringify(store.getState()));
 store.subscribe(() => {
   addToList(JSON.stringify(store.getState()));
 });
-
 
 store.dispatch(changeName('Multiple Actions and Reducers'));
 store.dispatch(changeValue(2017));

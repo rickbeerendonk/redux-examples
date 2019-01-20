@@ -18,11 +18,7 @@ class PostListContainer extends React.Component {
       <React.Fragment>
         {isFetching && <Fetching />}
 
-        {error ? (
-          <ErrorMessage message={error} />
-        ) : (
-          <PostList posts={posts} />
-        )}
+        {error ? <ErrorMessage message={error} /> : <PostList posts={posts} />}
       </React.Fragment>
     );
   }
@@ -34,6 +30,4 @@ const mapStateToProps = state => ({
   posts: state.posts.posts
 });
 
-export default connect(
-  mapStateToProps
-)(PostListContainer);
+export default connect(mapStateToProps)(PostListContainer);

@@ -3,7 +3,7 @@
 
 import { createStore } from 'redux';
 
-function reducer(state) { 
+function reducer(state) {
   return state;
 }
 

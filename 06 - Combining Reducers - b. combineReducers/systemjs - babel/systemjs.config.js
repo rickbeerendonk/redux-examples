@@ -17,12 +17,13 @@ SystemJS.config({
   },
   map: {
     'plugin-babel': 'npm:systemjs-plugin-babel/plugin-babel.js',
-    'systemjs-babel-build': 'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
-    'redux': 'npm:redux/dist/redux.js'
+    'systemjs-babel-build':
+      'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
+    redux: 'npm:redux/dist/redux.js'
   },
   packages: {
-    ".": {
-      "defaultExtension": "js"
+    '.': {
+      defaultExtension: 'js'
     }
   },
   transpiler: 'plugin-babel'

@@ -30,12 +30,12 @@ interface State {
   value: number;
 }
 
-function reducer(state = {name: '', value: 0}, action: Action): State { 
+function reducer(state = { name: '', value: 0 }, action: Action): State {
   switch (action.type) {
     case CHANGE_NAME:
-      return {...state, name: (<PayloadAction<string>>action).payload};
+      return { ...state, name: (<PayloadAction<string>>action).payload };
     case CHANGE_VALUE:
-      return {...state, value: (<PayloadAction<number>>action).payload};
+      return { ...state, value: (<PayloadAction<number>>action).payload };
     default:
       return state;
   }
@@ -48,7 +48,10 @@ store.subscribe(() => {
   addToList(JSON.stringify(store.getState()));
 });
 
-const boundActionCreators = bindActionCreators({changeName, changeValue}, store.dispatch);
+const boundActionCreators = bindActionCreators(
+  { changeName, changeValue },
+  store.dispatch
+);
 
 // Can be passed to places that don't know about store / Redux:
 boundActionCreators.changeName('boundActionCreators');

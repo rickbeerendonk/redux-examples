@@ -29,7 +29,7 @@ export function fetchPostsSuccess(json) {
 export function fetchPosts() {
   // Thunk middleware can handle functions.
   // It calls the function and passes dispatch.
-  return function (dispatch) {
+  return function(dispatch) {
     dispatch(fetchPostsRequest(true));
 
     // Thunk middleware can also handle a return value,

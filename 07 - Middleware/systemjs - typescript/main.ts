@@ -1,14 +1,22 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2018 Rick Beerendonk          !*/
 
-import { 
-  Action, Dispatch, Middleware, MiddlewareAPI, Store,
-  applyMiddleware, combineReducers, createStore
+import {
+  Action,
+  Dispatch,
+  Middleware,
+  MiddlewareAPI,
+  Store,
+  applyMiddleware,
+  combineReducers,
+  createStore
 } from 'redux';
 
 import { addToList } from './helpers';
 
-const logger: Middleware = <S extends Dispatch<Action>>(store: MiddlewareAPI<S>) => (next: Dispatch<Action>) => (action: any) => {
+const logger: Middleware = <S extends Dispatch<Action>>(
+  store: MiddlewareAPI<S>
+) => (next: Dispatch<Action>) => (action: any) => {
   // Before state change
   addToList(`[Logger] Dispatching ${JSON.stringify(action)}`, 'logger');
 
@@ -19,7 +27,10 @@ const logger: Middleware = <S extends Dispatch<Action>>(store: MiddlewareAPI<S>)
 
   // After state change
   addToList(`[Logger] Result = ${JSON.stringify(result)}`, 'logger');
-  addToList(`[Logger] Next state = ${JSON.stringify(store.getState())}`, 'logger');
+  addToList(
+    `[Logger] Next state = ${JSON.stringify(store.getState())}`,
+    'logger'
+  );
 
   return result;
 };

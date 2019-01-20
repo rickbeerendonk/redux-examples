@@ -16,7 +16,9 @@
     "clean": "rimraf node_modules",
     "open": "open",
     "openserver": "node \"./Util 02 - HTTP and REST servers/server.js\" 8080",
-    "openserver_old": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080"
+    "openserver_old": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080",
+    "prettier": "prettier --list-different '**/*.{json,js,jsx,html,ts,tsx}'",
+    "prettier-fix": "prettier --write '**/*.{json,js,jsx,html,ts,tsx}'"
   },
   "devDependencies": {
     "@types/react": "^16.7.20",
@@ -24,6 +26,7 @@
     "eslint": "^5.12.1",
     "eslint-plugin-react": "^7.12.4",
     "redux-devtools": "^3.5.0",
+    "prettier": "^1.16.0",
     "rimraf": "^2.6.3"
   },
   "dependencies": {

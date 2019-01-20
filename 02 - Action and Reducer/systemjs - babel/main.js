@@ -5,10 +5,10 @@ import { createStore } from 'redux';
 
 const CHANGE_NAME = 'CHANGE_NAME';
 
-function reducer(state = {name: 'Reducer'}, action) { 
+function reducer(state = { name: 'Reducer' }, action) {
   switch (action.type) {
     case CHANGE_NAME:
-      return {...state, name: action.payload};
+      return { ...state, name: action.payload };
     default:
       return state;
   }

@@ -21,12 +21,12 @@ function changeValue(value) {
   };
 }
 
-function reducer(state = {}, action) { 
+function reducer(state = {}, action) {
   switch (action.type) {
     case CHANGE_NAME:
-      return {...state, name: action.payload};
+      return { ...state, name: action.payload };
     case CHANGE_VALUE:
-      return {...state, value: action.payload};
+      return { ...state, value: action.payload };
     default:
       return state;
   }
@@ -39,7 +39,10 @@ store.subscribe(() => {
   addToList(JSON.stringify(store.getState()));
 });
 
-const boundActionCreators = bindActionCreators({changeName, changeValue}, store.dispatch);
+const boundActionCreators = bindActionCreators(
+  { changeName, changeValue },
+  store.dispatch
+);
 
 // Can be passed to places that don't know about store / Redux:
 boundActionCreators.changeName('boundActionCreators');

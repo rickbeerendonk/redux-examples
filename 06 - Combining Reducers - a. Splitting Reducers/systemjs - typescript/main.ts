@@ -55,11 +55,14 @@ interface State {
   value: number;
 }
 
-function reducer(state: State = {name: undefined, value: undefined}, action: Action): State { 
+function reducer(
+  state: State = { name: undefined, value: undefined },
+  action: Action
+): State {
   return {
     name: name(state.name, action),
     value: value(state.value, action)
-  }
+  };
 }
 
 const store: Store<State> = createStore(reducer);

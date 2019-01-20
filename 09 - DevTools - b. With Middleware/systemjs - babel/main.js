@@ -15,7 +15,10 @@ const logger = store => next => action => {
 
   // After state change
   addToList(`[Logger] Result = ${JSON.stringify(result)}`, 'logger');
-  addToList(`[Logger] Next state = ${JSON.stringify(store.getState())}`, 'logger');
+  addToList(
+    `[Logger] Next state = ${JSON.stringify(store.getState())}`,
+    'logger'
+  );
 
   return result;
 };
@@ -61,11 +64,7 @@ const reducer = combineReducers({
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducer, 
-  composeEnhancers(
-    applyMiddleware(logger)
-  ));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(logger)));
 addToList(JSON.stringify(store.getState()));
 
 store.subscribe(() => {

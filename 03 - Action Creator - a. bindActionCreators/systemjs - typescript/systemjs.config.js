@@ -6,18 +6,18 @@
 SystemJS.config({
   typescriptOptions: {
     // Copy of compiler options in standard tsconfig.json
-    "target": "es5",
-    "module": "system",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": ["es2015", "dom"],
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": false
+    target: 'es5',
+    module: 'system',
+    sourceMap: true,
+    emitDecoratorMetadata: true,
+    experimentalDecorators: true,
+    lib: ['es2015', 'dom'],
+    noImplicitAny: true,
+    suppressImplicitAnyIndexErrors: false
   },
   meta: {
-    'typescript': {
-      "exports": "ts"
+    typescript: {
+      exports: 'ts'
     }
   },
   paths: {
@@ -25,9 +25,9 @@ SystemJS.config({
     'npm:': '../../node_modules/'
   },
   map: {
-    'ts': 'npm:plugin-typescript/lib/plugin.js',
-    'typescript': 'npm:typescript/lib/typescript.js',
-    'redux': 'npm:redux/dist/redux.js'
+    ts: 'npm:plugin-typescript/lib/plugin.js',
+    typescript: 'npm:typescript/lib/typescript.js',
+    redux: 'npm:redux/dist/redux.js'
   },
   transpiler: 'ts'
 });
