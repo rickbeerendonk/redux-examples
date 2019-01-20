@@ -14,6 +14,8 @@
   "homepage": "https://github.com/rickbeerendonk/redux-examples#readme",
   "scripts": {
     "clean": "rimraf node_modules",
+    "eslint": "eslint . --ext .js,.jsx --cache",
+    "eslint-fix": "eslint . --ext .js,.jsx --cache --fix",
     "open": "open",
     "openserver": "node \"./Util 02 - HTTP and REST servers/server.js\" 8080",
     "openserver_old": "node \"./Util 01 - Static File Server/static-file-server.js\" 8080",

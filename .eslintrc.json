@@ -15,5 +15,10 @@
   "rules": {
     "react/prop-types": 0,
     "semi": [2, "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "16.8.0-alpha.1"
+    }
   }
 }
