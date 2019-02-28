@@ -19,13 +19,17 @@ function GreetingEditor({ name, changeName }) {
   );
 }
 
-const mapStateToProps = state => ({
-  name: state.name
-});
+function mapStateToProps(state) {
+  return {
+    name: state.name
+  };
+}
 
-const mapDispatchToProps = dispatch => ({
-  changeName: bindActionCreators(changeName, dispatch)
-});
+function mapDispatchToProps(dispatch) {
+  return {
+    changeName: bindActionCreators(changeName, dispatch)
+  };
+}
 
 export default connect(
   mapStateToProps,
