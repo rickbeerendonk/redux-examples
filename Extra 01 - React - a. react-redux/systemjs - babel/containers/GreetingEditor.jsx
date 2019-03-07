@@ -26,9 +26,12 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    changeName: bindActionCreators(changeName, dispatch)
-  };
+  return bindActionCreators(
+    {
+      changeName
+    },
+    dispatch
+  );
 }
 
 export default connect(
