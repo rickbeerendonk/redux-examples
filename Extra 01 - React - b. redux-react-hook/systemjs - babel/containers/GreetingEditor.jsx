@@ -18,8 +18,9 @@ function GreetingEditor() {
   const { name } = useMappedState(mapState);
 
   const dispatch = useDispatch();
-  const handleNameChange = React.useCallback(newName =>
-    dispatch(changeName(newName))
+  const handleNameChange = React.useCallback(
+    newName => dispatch(changeName(newName)),
+    [dispatch]
   );
 
   return (
