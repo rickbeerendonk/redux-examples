@@ -22,7 +22,6 @@ SystemJS.config({
       'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
     react: 'npm:react/umd/react.development.js',
     'react-dom': 'npm:react-dom/umd/react-dom.development.js',
-    'react-redux': 'npm:react-redux',
     redux: 'npm:redux/dist/redux.js',
     'redux-react-hook': 'npm:redux-react-hook/dist/index.js'
   },
@@ -50,10 +49,6 @@ SystemJS.config({
     },
     './reducers': {
       defaultExtension: 'js'
-    },
-    'react-redux': {
-      format: 'cjs',
-      main: 'dist/react-redux.js'
     }
   },
   transpiler: 'plugin-babel'
