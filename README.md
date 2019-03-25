@@ -2,6 +2,8 @@
 
 Examples for [Redux](http://redux.js.org/).
 
+![](https://img.shields.io/github/license/rickbeerendonk/redux-examples.svg)
+
 # How to run?
 
 ## Always 
