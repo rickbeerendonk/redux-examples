@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { StoreContext } from 'redux-react-hook';
 import { createStore } from 'redux';
 
-import GreetingEditor from './name/containers/GreetingEditor';
+import NameEditor from './name/containers/NameEditor';
 import ValueEditor from './value/containers/ValueEditor';
 import reducer from './reducers/index';
 
@@ -17,7 +17,7 @@ const store = createStore(
 
 ReactDOM.render(
   <StoreContext.Provider value={store}>
-    <GreetingEditor />
+    <NameEditor />
     <ValueEditor />
   </StoreContext.Provider>,
   document.getElementById('app')

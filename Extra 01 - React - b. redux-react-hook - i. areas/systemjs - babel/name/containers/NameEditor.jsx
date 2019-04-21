@@ -14,7 +14,7 @@ const mapState = state => ({
   name: state.name
 });
 
-function GreetingEditor() {
+function NameEditor() {
   const { name } = useMappedState(mapState);
 
   const dispatch = useDispatch();
@@ -31,4 +31,4 @@ function GreetingEditor() {
   );
 }
 
-export default GreetingEditor;
+export default NameEditor;

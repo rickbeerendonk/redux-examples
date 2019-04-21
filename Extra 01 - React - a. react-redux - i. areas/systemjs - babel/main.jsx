@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import GreetingEditor from './name/containers/GreetingEditor';
+import NameEditor from './name/containers/NameEditor';
 import ValueEditor from './value/containers/ValueEditor';
 import reducer from './reducers/index';
 
@@ -17,7 +17,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <GreetingEditor />
+    <NameEditor />
     <ValueEditor />
   </Provider>,
   document.getElementById('app')

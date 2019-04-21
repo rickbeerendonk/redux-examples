@@ -10,7 +10,7 @@ import { change } from '../actions/index';
 import EditBox from '../components/EditBox';
 import Greeting from '../components/Greeting';
 
-function GreetingEditor({ name, changeName }) {
+function NameEditor({ name, changeName }) {
   return (
     <React.Fragment>
       <EditBox onChange={changeName} name={name} />
@@ -37,4 +37,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(GreetingEditor);
+)(NameEditor);
