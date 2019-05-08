@@ -1,7 +1,7 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2018 Rick Beerendonk          !*/
 
-import { Action, Dispatch, Store, combineReducers, createStore } from 'redux';
+import { Action, Store, combineReducers, createStore } from 'redux';
 
 import { addToList } from './helpers';
 
