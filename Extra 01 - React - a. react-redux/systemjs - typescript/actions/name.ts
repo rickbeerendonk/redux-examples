@@ -1,20 +1,18 @@
 /*! Mozilla Public License Version 2.0 !*/
 /*! Copyright © 2019 Rick Beerendonk   !*/
 
-import { AnyAction } from 'redux';
-
 import * as constants from '../constants/name';
 
 // Interfaces
 
-export interface ChangeName extends AnyAction {
+export interface ChangeNameAction {
   type: constants.CHANGE_NAME;
   payload: string;
 }
 
 // Actions
 
-export function changeName(name: string): ChangeName {
+export function changeName(name: string): ChangeNameAction {
   return {
     type: constants.CHANGE_NAME,
     payload: name
@@ -23,4 +21,4 @@ export function changeName(name: string): ChangeName {
 
 // Actions Group
 
-export type NameActions = ChangeName;
+export type NameActions = ChangeNameAction;
