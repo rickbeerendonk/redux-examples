@@ -3,22 +3,11 @@
 
 import * as constants from '../constants/name';
 
-// Interfaces
-
-export interface ChangeNameAction {
-  type: typeof constants.CHANGE_NAME;
-  payload: string;
-}
-
 // Actions
 
-export function changeName(name: string): ChangeNameAction {
+export function changeName(name: string) {
   return {
     type: constants.CHANGE_NAME,
     payload: name
   };
 }
-
-// Actions Group
-
-export type NameActions = ChangeNameAction;
