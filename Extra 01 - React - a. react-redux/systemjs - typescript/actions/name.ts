@@ -6,7 +6,7 @@ import * as constants from '../constants/name';
 // Interfaces
 
 export interface ChangeNameAction {
-  type: constants.CHANGE_NAME;
+  type: typeof constants.CHANGE_NAME;
   payload: string;
 }
 
