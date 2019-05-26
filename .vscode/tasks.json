@@ -16,13 +16,8 @@
       "args": ["install"]
     },
     {
-      "taskName": "open",
-      "args": ["run", "open", "--", "${file}"],
-      "isBuildCommand": false
-    },
-    {
-      "taskName": "openserver",
-      "args": ["run", "openserver", "--", "${fileDirname}"],
+      "taskName": "start",
+      "args": ["run", "start", "--", "${fileDirname}"],
       "isBuildCommand": true
     },
     {
