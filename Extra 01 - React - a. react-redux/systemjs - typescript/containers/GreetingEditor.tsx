@@ -6,7 +6,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
 import { Store } from '../types/index';
-import * as nameActions from '../actions/name';
+import * as nameActions from '../actions/index';
 
 import EditBox from '../components/EditBox';
 import Greeting from '../components/Greeting';

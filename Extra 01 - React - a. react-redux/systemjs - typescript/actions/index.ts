@@ -5,7 +5,12 @@ import * as constants from '../constants/name';
 
 // Actions
 
-export function changeName(name: string) {
+interface IChangeNameAction {
+  type: string;
+  payload: string;
+}
+
+export function changeName(name: string): IChangeNameAction {
   return {
     type: constants.CHANGE_NAME,
     payload: name
