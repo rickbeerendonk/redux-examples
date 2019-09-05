@@ -10,11 +10,16 @@ import thunkMiddleware from 'redux-thunk';
 import reducer from './reducers/index';
 import Home from './containers/Home';
 
+//import { fetchPosts } from './actions/index';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducer,
   composeEnhancers(applyMiddleware(thunkMiddleware))
 );
+
+// Fetch immediately.
+//store.dispatch(fetchPosts());
 
 ReactDOM.render(
   <Provider store={store}>
