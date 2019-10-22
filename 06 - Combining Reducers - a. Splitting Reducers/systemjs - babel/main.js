@@ -46,7 +46,7 @@ function value(state = 0, action) {
 
 // Combine
 
-function reducer(state, action) {
+function reducer(state = {}, action) {
   return {
     name: name(state.name, action),
     value: value(state.value, action)
