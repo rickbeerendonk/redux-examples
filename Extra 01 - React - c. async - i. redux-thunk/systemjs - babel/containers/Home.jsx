@@ -22,7 +22,4 @@ const mapDispatchToProps = dispatch => ({
   fetch: bindActionCreators(fetchPosts, dispatch)
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Home);
+export default connect(null, mapDispatchToProps)(Home);

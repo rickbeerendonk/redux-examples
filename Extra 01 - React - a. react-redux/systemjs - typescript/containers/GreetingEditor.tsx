@@ -47,7 +47,4 @@ function mapDispatchToProps(dispatch: Dispatch<nameActions.NameActions>) {
   );
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GreetingEditor);
+export default connect(mapStateToProps, mapDispatchToProps)(GreetingEditor);
