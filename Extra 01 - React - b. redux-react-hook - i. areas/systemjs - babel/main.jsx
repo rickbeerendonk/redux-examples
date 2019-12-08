@@ -18,6 +18,7 @@ const store = createStore(
 ReactDOM.render(
   <StoreContext.Provider value={store}>
     <NameEditor />
+    <br />
     <ValueEditor />
   </StoreContext.Provider>,
   document.getElementById('app')
