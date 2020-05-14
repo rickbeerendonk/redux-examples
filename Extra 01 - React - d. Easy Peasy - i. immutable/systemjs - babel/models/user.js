@@ -6,12 +6,12 @@ import { action } from 'easy-peasy';
 const userModel = {
   name: '',
 
-  // Actions allow writing mutable code,
-  // because Immer (under the covers) will
-  // change this into immutable changes.
-  changeName: action((state, payload) => {
-    state.name = payload;
-  })
+  // Actions shouldn't not overwrite the state,
+  // but produce new state
+  changeName: action((state, payload) => ({
+    ...state,
+    name: payload
+  }))
 };
 
 export default userModel;
