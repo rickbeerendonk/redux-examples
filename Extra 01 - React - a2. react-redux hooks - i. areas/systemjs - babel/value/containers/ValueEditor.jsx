@@ -2,36 +2,28 @@
 /*! Copyright © 2019 Rick Beerendonk          !*/
 
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { change } from '../actions/index';
 
 import NumberBox from '../components/NumberBox';
 import Value from '../components/Value';
 
-function ValueEditor({ value, changeValue }) {
+function ValueEditor() {
+  const value = useSelector(state => state.value);
+
+  const dispatch = useDispatch();
+
+  const handleChangeValue = React.useCallback(name => dispatch(change(name)), [
+    dispatch
+  ]);
+
   return (
     <React.Fragment>
-      <NumberBox onChange={changeValue} value={value} />
+      <NumberBox onChange={handleChangeValue} value={value} />
       <Value value={value} />
     </React.Fragment>
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    value: state.value
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      changeValue: change
-    },
-    dispatch
-  );
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ValueEditor);
+export default ValueEditor;
