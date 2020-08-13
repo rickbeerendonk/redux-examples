@@ -13,6 +13,7 @@ function GreetingEditor() {
   const name = useSelector(state => state.name);
 
   const dispatch = useDispatch();
+
   const handleChangeName = React.useCallback(
     name => dispatch(changeName(name)),
     [dispatch]
