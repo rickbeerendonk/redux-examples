@@ -10,10 +10,11 @@ import EditBox from '../components/EditBox';
 import Greeting from '../components/Greeting';
 
 function GreetingEditor() {
+  // Reading from the Store's state
   const name = useSelector(state => state.name);
 
+  // Writing to the Store's state
   const dispatch = useDispatch();
-
   const handleChangeName = React.useCallback(
     name => dispatch(changeName(name)),
     [dispatch]
