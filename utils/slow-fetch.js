@@ -1,8 +1,6 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2018 Rick Beerendonk          !*/
 
-/* global Promise */
-
 export function slowfetch(ms, ...args) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
