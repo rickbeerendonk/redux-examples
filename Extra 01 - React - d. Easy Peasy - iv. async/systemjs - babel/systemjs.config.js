@@ -18,9 +18,10 @@ SystemJS.config({
   },
   map: {
     debounce: 'npm:debounce/index.js',
-    'easy-peasy': 'npm:easy-peasy/dist/easy-peasy.umd.development.js',
-    'immer-peasy': 'npm:immer-peasy/dist/immer.umd.js',
-    'is-plain-object': 'npm:is-plain-object/index.cjs.js',
+    'easy-peasy': 'npm:easy-peasy/dist/easy-peasy.umd.js',
+    immer: 'npm:immer/dist/immer.umd.development.js',
+    'immer-peasy': 'npm:immer-peasy/dist/immer.umd.development.js',
+    'is-plain-object': 'npm:is-plain-object/dist/is-plain-object.js',
     isobject: 'npm:isobject/index.js',
     memoizerific: 'npm:memoizerific/memoizerific.js',
     'plugin-babel': 'npm:systemjs-plugin-babel/plugin-babel.js',
@@ -28,9 +29,9 @@ SystemJS.config({
       'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
     react: 'npm:react/umd/react.development.js',
     'react-dom': 'npm:react-dom/umd/react-dom.development.js',
-    'react-redux': 'npm:react-redux',
     redux: 'npm:redux/dist/redux.js',
-    'redux-thunk': 'npm:redux-thunk/dist/redux-thunk.js'
+    'redux-thunk': 'npm:redux-thunk/dist/redux-thunk.js',
+    'use-memo-one': 'npm:use-memo-one/dist/use-memo-one.js'
   },
   packages: {
     '.': {
