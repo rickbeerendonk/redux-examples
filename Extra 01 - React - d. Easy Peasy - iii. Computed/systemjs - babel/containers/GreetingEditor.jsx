@@ -12,9 +12,10 @@ function GreetingEditor() {
   const upperCaseName = useStoreState(state => state.user.upperCaseName);
   const changeName = useStoreActions(actions => actions.user.changeName);
 
-  const handleNameChange = React.useCallback(newName => changeName(newName), [
-    changeName
-  ]);
+  const handleNameChange = React.useCallback(
+    newName => changeName(newName),
+    [changeName]
+  );
 
   return (
     <React.Fragment>
