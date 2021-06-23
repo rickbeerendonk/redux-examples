@@ -26,7 +26,7 @@ SystemJS.config({
     'react-dom': 'npm:react-dom/umd/react-dom.development.js',
     'react-redux': 'npm:react-redux',
     redux: 'npm:redux/dist/redux.js',
-    'redux-saga': 'npm:redux-saga/dist/redux-thunk.js'
+    'redux-saga': 'npm:redux-saga/dist/redux-saga.umd.js'
   },
   packages: {
     '.': {
