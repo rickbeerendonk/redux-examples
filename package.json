@@ -39,7 +39,7 @@
     "rimraf": "3.0.2"
   },
   "dependencies": {
-    "easy-peasy": "4.0.1",
+    "easy-peasy": "3.3.1",
     "mime-types": "2.1.31",
     "plugin-typescript": "8.0.0",
     "prop-types": "15.7.2",
