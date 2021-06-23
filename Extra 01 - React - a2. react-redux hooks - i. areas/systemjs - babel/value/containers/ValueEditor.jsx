@@ -14,9 +14,10 @@ function ValueEditor() {
 
   const dispatch = useDispatch();
 
-  const handleChangeValue = React.useCallback(name => dispatch(change(name)), [
-    dispatch
-  ]);
+  const handleChangeValue = React.useCallback(
+    name => dispatch(change(name)),
+    [dispatch]
+  );
 
   return (
     <React.Fragment>

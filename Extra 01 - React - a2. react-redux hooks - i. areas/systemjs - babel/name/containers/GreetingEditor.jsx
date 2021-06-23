@@ -14,9 +14,10 @@ function GreetingEditor() {
 
   const dispatch = useDispatch();
 
-  const handleChangeName = React.useCallback(name => dispatch(change(name)), [
-    dispatch
-  ]);
+  const handleChangeName = React.useCallback(
+    name => dispatch(change(name)),
+    [dispatch]
+  );
 
   return (
     <React.Fragment>

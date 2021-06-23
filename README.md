@@ -6,7 +6,8 @@ Examples for [Redux](http://redux.js.org/).
 
 # How to run?
 
-## Always 
+## Always
+
 Install dependencies first:
 
 1. Open command line (Windows) or terminal (macOS) in the root folder
@@ -21,7 +22,7 @@ Install dependencies first:
 
 ## Command Line / Terminal
 
-1. Run `npm start`. Now the server will run and the browser will open.
+1. Run `npm start`. Now the server will run and the browser will open. Server path will be written in the console.
 2. In the browser, browse to the folder of the example you want to run and it will open automatically.
 
 ## Licence
@@ -30,4 +31,4 @@ European Union Public Licence version 1.2
 
 ## Copyright
 
-Copyright © 2017-2019 Rick Beerendonk
+Copyright © 2017-2021 Rick Beerendonk
