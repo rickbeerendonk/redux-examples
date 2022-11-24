@@ -22,7 +22,7 @@ SystemJS.config({
   },
   paths: {
     // paths serve as alias
-    'npm:': '../../node_modules/'
+    'npm:': '../../../../node_modules/'
   },
   map: {
     ts: 'npm:plugin-typescript/lib/plugin.js',
