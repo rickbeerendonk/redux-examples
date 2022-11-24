@@ -11,7 +11,7 @@ Examples for [Redux](http://redux.js.org/).
 Install dependencies first:
 
 1. Open command line (Windows) or terminal (macOS) in the root folder
-2. Run `npm install`
+2. Run `npm install --legacy-peer-deps`
 
 ## Visual Studio Code
 
