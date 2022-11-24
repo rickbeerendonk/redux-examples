@@ -1,11 +1,11 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2017, 2022 Rick Beerendonk    !*/
 
-import { configureStore } from '@reduxjs/toolkit';
+import { createReducer, configureStore } from '@reduxjs/toolkit';
 
-function reducer(state = 'Reducer') {
-  return state;
-}
+const initialState = 'Reducer';
+
+const reducer = createReducer(initialState, () => {});
 
 const store = configureStore({
   reducer
