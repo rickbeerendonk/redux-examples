@@ -23,6 +23,6 @@ const store = configureStore({
   reducer
 });
 
-store.dispatch(changeName('Action' /* paylod property */));
+store.dispatch(changeName('Action' /* payload property */));
 
 document.getElementById('content').innerText = store.getState().name;
