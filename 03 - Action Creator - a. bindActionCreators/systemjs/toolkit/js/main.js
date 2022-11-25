@@ -1,6 +1,7 @@
 /*! European Union Public License version 1.2 !*/
 /*! Copyright © 2017, 2022 Rick Beerendonk    !*/
 
+import { bindActionCreators } from 'redux';
 import { createAction, createReducer, configureStore } from '@reduxjs/toolkit';
 
 // Actions
@@ -22,7 +23,9 @@ const reducer = createReducer(initialState, builder => {
 const store = configureStore({
   reducer
 });
+const boundChangeName = bindActionCreators(changeName, store.dispatch);
 
-store.dispatch(changeName('Action' /* payload */));
+// Can be passed to places that don't know about store / Redux:
+boundChangeName('boundActionCreator' /* payload */);
 
 document.getElementById('content').innerText = store.getState().name;

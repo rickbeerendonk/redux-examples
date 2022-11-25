@@ -2,6 +2,7 @@
 /*! Copyright © 2017, 2022 Rick Beerendonk    !*/
 
 import { createAction, createReducer, configureStore } from '@reduxjs/toolkit';
+import { addToList } from './helpers';
 
 // Actions
 
@@ -22,7 +23,14 @@ const reducer = createReducer(initialState, builder => {
 const store = configureStore({
   reducer
 });
+const unsubscribe = store.subscribe(() => {
+  const name = store.getState().name;
+  addToList(name);
+});
 
-store.dispatch(changeName('Action' /* payload */));
+store.dispatch(changeName('Visible 1'));
+store.dispatch(changeName('Visible 2'));
 
-document.getElementById('content').innerText = store.getState().name;
+unsubscribe();
+
+store.dispatch(changeName('Invisible 3'));

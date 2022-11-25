@@ -22,17 +22,12 @@ SystemJS.config({
   },
   paths: {
     // paths serve as alias
-    'npm:': '../../node_modules/'
+    'npm:': '../../../../node_modules/'
   },
   map: {
     ts: 'npm:plugin-typescript/lib/plugin.js',
     typescript: 'npm:typescript/lib/typescript.js',
     redux: 'npm:redux/dist/redux.js'
-  },
-  packages: {
-    '.': {
-      defaultExtension: 'ts'
-    }
   },
   transpiler: 'ts'
 });
