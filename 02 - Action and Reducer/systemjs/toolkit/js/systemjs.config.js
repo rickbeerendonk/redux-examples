@@ -1,5 +1,5 @@
 /*! European Union Public License version 1.2 !*/
-/*! Copyright © 2017 Rick Beerendonk          !*/
+/*! Copyright © 2017, 2022 Rick Beerendonk    !*/
 
 /* global SystemJS */
 
@@ -13,13 +13,18 @@ SystemJS.config({
   },
   paths: {
     // paths serve as alias
-    'npm:': '../../node_modules/'
+    'npm:': '../../../../node_modules/'
   },
   map: {
+    '@reduxjs/toolkit': 'npm:@reduxjs/toolkit/dist/index.js',
     'plugin-babel': 'npm:systemjs-plugin-babel/plugin-babel.js',
     'systemjs-babel-build':
       'npm:systemjs-plugin-babel/systemjs-babel-browser.js',
-    redux: 'npm:redux/dist/redux.js'
+    immer: 'npm:immer/dist/index.js',
+    'react-redux': 'npm:react-redux',
+    redux: 'npm:redux/dist/redux.js',
+    'redux-thunk': 'npm:redux-thunk/dist/redux-thunk.js',
+    reselect: 'npm:reselect/dist/reselect.js'
   },
   packages: {
     '.': {
