@@ -14,9 +14,8 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <StoreContext.Provider value={store}>
     <GreetingEditor />
-  </StoreContext.Provider>,
-  document.getElementById('app')
+  </StoreContext.Provider>
 );

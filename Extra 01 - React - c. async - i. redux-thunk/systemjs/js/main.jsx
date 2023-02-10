@@ -21,9 +21,8 @@ const store = createStore(
 // Fetch immediately.
 //store.dispatch(fetchPosts());
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <Provider store={store}>
     <Home />
-  </Provider>,
-  document.getElementById('app')
+  </Provider>
 );

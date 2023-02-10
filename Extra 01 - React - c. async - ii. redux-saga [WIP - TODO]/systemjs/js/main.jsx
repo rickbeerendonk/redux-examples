@@ -23,9 +23,8 @@ const store = createStore(
 // then run the saga
 sagaMiddleware.run(mySaga);
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <Provider store={store}>
     <Home />
-  </Provider>,
-  document.getElementById('app')
+  </Provider>
 );
