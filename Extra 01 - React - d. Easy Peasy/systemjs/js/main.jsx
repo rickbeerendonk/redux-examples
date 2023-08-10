@@ -9,9 +9,8 @@ import GreetingEditor from './containers/GreetingEditor';
 
 import store from './store';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <StoreProvider store={store}>
     <GreetingEditor />
-  </StoreProvider>,
-  document.getElementById('app')
+  </StoreProvider>
 );

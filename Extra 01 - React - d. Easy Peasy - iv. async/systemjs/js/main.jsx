@@ -9,9 +9,8 @@ import Home from './containers/Home';
 
 import store from './store';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <StoreProvider store={store}>
     <Home />
-  </StoreProvider>,
-  document.getElementById('app')
+  </StoreProvider>
 );

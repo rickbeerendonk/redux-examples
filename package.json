@@ -1,6 +1,6 @@
 {
   "name": "redux-examples",
-  "version": "0.2.0",
+  "version": "1.0.3",
   "description": "Examples for [Redux](http://redux.js.org).",
   "repository": {
     "type": "git",
@@ -28,33 +28,36 @@
     "validate": "npm run eslint && npm run prettier"
   },
   "devDependencies": {
-    "@types/react": "18.0.25",
-    "@types/react-redux": "7.1.24",
-    "eslint": "8.28.0",
-    "eslint-plugin-jsx-a11y": "6.6.1",
-    "eslint-plugin-react": "7.31.10",
+    "@types/react": "18.2.20",
+    "@types/react-redux": "7.1.25",
+    "eslint": "8.46.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.33.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "4.3.0",
-    "prettier": "2.8.0",
-    "redux-devtools": "3.7.0",
-    "rimraf": "3.0.2"
+    "prettier": "3.0.1",
+    "rimraf": "5.0.1"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "1.9.0",
-    "easy-peasy": "5.2.0",
+    "@reduxjs/toolkit": "1.9.5",
+    "easy-peasy": "6.0.2",
     "mime-types": "2.1.35",
     "plugin-typescript": "8.0.0",
     "prop-types": "15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-redux": "8.0.5",
-    "redux": "4.2.0",
-    "redux-react-hook": "4.0.3",
-    "redux-saga": "1.2.1",
+    "react-redux": "8.1.2",
+    "redux": "4.2.1",
+    "redux-saga": "1.2.3",
     "redux-thunk": "2.4.2",
-    "serve": "14.1.2",
+    "serve": "14.2.0",
     "systemjs-0.21.6": "npm:systemjs@0.21.6",
     "systemjs-plugin-babel": "0.0.25",
-    "typescript": "4.9.3"
+    "typescript": "5.1.6"
+  },
+  "overrides": {
+    "plugin-typescript": {
+      "typescript": "^5.0.0"
+    }
   }
 }
