@@ -12,16 +12,11 @@
     "url": "https://github.com/rickbeerendonk/redux-examples/issues"
   },
   "homepage": "https://github.com/rickbeerendonk/redux-examples#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run validate",
-      "pre-push": "npm run validate"
-    }
-  },
   "scripts": {
     "clean": "rimraf node_modules",
     "eslint": "eslint . --ext .js,.jsx --cache",
     "eslint-fix": "eslint . --ext .js,.jsx --cache --fix",
+    "prepare": "husky install",
     "prettier": "prettier --list-different '**/*.{json,js,jsx,html,ts,tsx}'",
     "prettier-fix": "prettier --write '**/*.{json,js,jsx,html,ts,tsx}'",
     "start": "node ./server/server.js",
@@ -34,7 +29,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.33.1",
     "eslint-plugin-react-hooks": "4.6.0",
-    "husky": "4.3.0",
+    "husky": "8.0.3",
     "prettier": "3.0.1",
     "rimraf": "5.0.1"
   },
