@@ -27,7 +27,7 @@ SystemJS.config({
     'react-redux': 'npm:react-redux',
     redux: 'npm:redux/dist/redux.js',
     'redux-thunk': 'npm:redux-thunk/dist/redux-thunk.js',
-    reselect: 'npm:reselect/dist/reselect.js'
+    reselect: 'npm:reselect/dist/cjs/reselect.cjs'
   },
   packages: {
     '.': {
